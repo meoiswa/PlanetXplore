@@ -7,38 +7,76 @@
 	--- History ---
 	Version	Changes
 	1		Created
+	2       Added Camera, Gravitaster, Misc. Changes
 	--- End ---
 
 ]]--
 
-world = love.physics.newWorld( 0,0, 10000,10000)
+world = love.physics.newWorld( -100000,-100000, 100000,100000)
 --This should be more than enough space!
 planets = {}
 --Holds the static planets where the player can go in and explore
+physobjs = {}
+--Holds the objects affected by gravity
+gravis = {}
+--Holds the Gravitasters
 
 require("MiddleClass");
 require("AdditionalMath");
 require("planet");
 require("player");
+require("camera");
+require("gravitaster");
 
 
 function love.load()
 	--This function is called exactly once at the beginning of the game.
-	planet1 = Planet(300,300,50,10000)
-	ply = Player(100,100,100,1)
+	planet1 = Planet(0,0,3000,10000000)
+
+	planet2 = Planet(0,-10000,1200,600000)
+	table.insert(planets,planet1)
+	table.insert(planets,planet2)
+	ply = Player(0,-3100,100,1)
+	ply.physics.body:setAngle(math.rad(-90))
+	table.insert(physobjs,ply)
+	gravitaster = Gravitaster( ply, planet1 )
+	gravitaster2 = Gravitaster( ply, planet2 )
+	table.insert(gravis,gravitaster)
+	table.insert(gravis,gravitaster2)
+	love.graphics.setFont()
 end
 
 function love.update(dt)
 	--Triggered every game frame. Used to update the state of the game
 	world:update(dt)
-	planet1:Pull(ply)
+	for k,v in pairs(planets) do
+		for q,j in pairs(physobjs) do
+			v:Pull(j)
+		end
+	end
 	ply:update(dt)
+	ply:camUpdate(dt)
+	for k,v in pairs(gravis) do
+		v:update(dt)
+	end 
 end
 
 function love.draw()
-	--Triggered every graphics grame. Used to draw on the screen.
-	planet1:draw()
-	ply:draw()
+	
+	ply:camDraw()
+	--Triggered every graphics frame. Used to draw on the screen.
+	for k,v in pairs(planets) do
+		v:draw()
+	end
+
+	for k,v in pairs(physobjs) do
+		v:draw()
+	end
+	
+	for k,v in pairs(gravis) do
+		v:draw()
+	end
+
 end
 
 function love.quit()
