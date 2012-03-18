@@ -83,16 +83,16 @@ end
 
 --Gets the X and Y components of the force of gravity between two Bodies
 function gravity( a,b )
+    local constant = gravConstant or 1
     local ax,ay = a.physics.body:getPosition()
     local bx,by = b.physics.body:getPosition()
     local amass,bmass
     local amass = a.mass or a.physics.body:getMass()
     local bmass = b.mass or b.physics.body:getMass()
-    local force = (amass*bmass)/math.pow(math.dist(ax,ay,bx,by),2)
+    local force = constant*(amass*bmass)/math.dist(ax,ay,bx,by)
     local angle = math.angle(ax,ay,bx,by)
     local fx = math.sin(angle)*-force
     local fy = math.cos(angle)*-force
     table.insert(b.physics.force,{fx,fy})
     return fx,fy
 end
-

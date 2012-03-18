@@ -20,6 +20,9 @@ function Camera:initialize( object, rotate )
 	self.planet = self:getStrongestPlanet()
 	self.width = love.graphics.getWidth()
 	self.height = love.graphics.getHeight()
+	self.mode = "auto"
+	self.scaleFactor=1
+	self.zoom=1
 end
 
 function Camera:update(dt)
@@ -31,9 +34,17 @@ function Camera:update(dt)
 	self.dist = math.dist(ax,ay,bx,by)
 	self.surfacedist = self.dist-self.planet.radius
 	self.planet = self:getStrongestPlanet()
-	self.scaleFactor = (self.height/2)/(self.surfacedist+250)
-	if self.scaleFactor > 1 then self.scaleFactor = 1 end
-	if self.scaleFactor < 0.3 then self.scaleFactor = 0.3 end
+	if self.mode == "auto" then
+		self.scaleFactor = (self.height/2)/(self.surfacedist+250)
+		if self.scaleFactor > 1 then self.scaleFactor = 1 end
+		if self.scaleFactor < 0.1 then self.scaleFactor = 0.1 end
+	else
+		if self.zoom > 0.01 then
+			self.scaleFactor = self.zoom
+		else 
+			self.zoom = 0.01
+		end
+	end
 end 
 
 function Camera:draw( func )
@@ -42,14 +53,21 @@ function Camera:draw( func )
 		if func then func() end
 		love.graphics.print("Distance to Strongest Gravity Force Source: " .. self.dist, 0,0)
 		love.graphics.print("Distance to 'Ground': " .. self.surfacedist , 0,20)
-
+		if self.planet then
+			love.graphics.print("PSI: " .. self.planet:getPSI(ply), 0,40)
+		end
 		--Zooming to keep the planet surface in camera
-		love.graphics.print("Scale factor: " .. self.scaleFactor .. "x", 0,40)
+		--love.graphics.print("Scale factor: " .. self.scaleFactor .. "x", 0,40)
+
+		
+
 		love.graphics.scale(self.scaleFactor)
 
 		love.graphics.translate((self.width/self.scaleFactor)/2,(self.height/self.scaleFactor)/2)
 		love.graphics.rotate(self.ang)
 		love.graphics.translate( -self.x,-self.y )
+
+
 
 		love.graphics.setColor(255,255,255,255)
 	end
@@ -58,6 +76,10 @@ end
 
 function Camera:getZoom()
 	return self.scaleFactor
+end
+
+function Camera:setZoom( zoom )
+	self.zoom = zoom
 end
 
 function Camera:getPosition()

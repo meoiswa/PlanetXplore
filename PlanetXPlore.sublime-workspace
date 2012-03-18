@@ -1,0 +1,168 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/SublimeLove/Love.sublime-build",
+	"command_palette":
+	{
+		"height": 288.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: LuaHeader"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/planet.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/camera.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/AdditionalMath.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/gravitaster.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/player.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/main.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/vector.lua",
+		"/C/Users/Meoiswa/Downloads/circletangent/main.lua",
+		"/C/Users/Meoiswa/Downloads/mazeGame/main.lua",
+		"/D/Dropbox/Developing/LOVE/Devel/Exped/Exped/items.lua",
+		"/D/Dropbox/Developing/LOVE/PlanetXplore/background.lua",
+		"/D/Dropbox/Developing/LOVE/Devel/Exped/Exped/background.lua",
+		"/D/Dropbox/Developing/LOVE/Devel/rotation/main.lua",
+		"/D/Developing/LOVE/PlanetXplore/main.lua",
+		"/D/Developing/LOVE/PlanetXplore/planet.lua",
+		"/D/Developing/LOVE/PlanetXplore/player.lua",
+		"/D/Developing/LOVE/PlanetXplore/AdditionalMath.lua",
+		"/D/Developing/LOVE/PlanetXplore/MiddleClass.lua",
+		"/D/Developing/LOVE/Devel/Networked/main.lua",
+		"/C/Users/Meoiswa/AppData/Roaming/Sublime Text 2/Packages/User/LuaLove2DMain.sublime-snippet",
+		"/C/Users/Meoiswa/AppData/Roaming/Sublime Text 2/Packages/SublimeLove/Love.sublime-build",
+		"/C/Users/Meoiswa/AppData/Roaming/Sublime Text 2/Packages/SublimeLove/src/callbacks.txt",
+		"/C/Users/Meoiswa/AppData/Roaming/Sublime Text 2/Packages/SublimeLove/src/api.txt",
+		"/D/Developing/LOVE/Devel/Tests/Test1 Input/main.lua",
+		"/C/Users/Meoiswa/AppData/Roaming/Sublime Text 2/Packages/User/LuaHeader.sublime-snippet",
+		"/C/Users/Meoiswa/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/D/Developing/LOVE/Devel/Predict/main.lua"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"seg1"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 155.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
